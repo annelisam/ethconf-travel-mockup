@@ -22,12 +22,12 @@ export function HeroSection() {
           </p>
 
           <h1 id="hero-title" className="display-1 max-w-[650px] text-balance">
-            Stay close to what matters.
+            Where to stay. How to get there.
           </h1>
 
           <p className="mt-8 max-w-lg text-lg leading-8 text-white/70">
-            Find your best base for three days at ETHConf — from the right hotel
-            to the fastest route into Javits Center.
+            Partner rates at 8 hotels near the Javits Center, plus the subway,
+            rail, and airport routes that get you to the door.
           </p>
 
           <div className="mt-9 flex flex-wrap items-center gap-3">
@@ -39,13 +39,13 @@ export function HeroSection() {
                   ?.scrollIntoView({ behavior: 'smooth' })
               }
             >
-              Find a place to stay <ArrowDown data-icon="inline-end" />
+              See partner rates <ArrowDown data-icon="inline-end" />
             </Button>
             <a
               className="inline-flex h-12 items-center gap-2 rounded-full border border-white/25 px-6 text-sm font-semibold transition hover:bg-white/10"
               href="#getting-there"
             >
-              How to get there <ArrowDown className="size-4" aria-hidden />
+              Plan your route <ArrowDown className="size-4" aria-hidden />
             </a>
           </div>
         </div>
@@ -62,7 +62,7 @@ export function HeroSection() {
                 From ETHConf 2026
               </span>
               <p className="mt-3 max-w-xs font-display text-2xl leading-tight">
-                The Javits welcome hall, ready for round two.
+                The Javits welcome hall.
               </p>
             </figcaption>
           </figure>

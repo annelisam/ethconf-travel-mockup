@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: 'Travel & Venue · ETHConf 2027',
   description:
-    'Plan your ETHConf 2027 stay, explore Javits Center, and compare partner hotels by distance and price.',
+    'Partner hotel rates, walk times to the Javits Center, and transit routes for ETHConf 2027.',
   icons: { icon: '/favicon.svg' },
   openGraph: {
     title: 'Travel & Venue · ETHConf 2027',

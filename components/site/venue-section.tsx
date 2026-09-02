@@ -23,12 +23,12 @@ export function VenueSection() {
         <SectionIntro
           eyebrow="The venue"
           tone="dark"
-          title={<span id="venue-title">You’ve been here before.</span>}
+          title={<span id="venue-title">Javits Center, Hudson Yards.</span>}
         >
           <p className="text-lg leading-8 text-white/70">
-            ETHConf returns to Javits Center, a glass-and-steel landmark in
-            Hudson Yards. Here’s how the space came to life in 2026 — and the
-            layout that kept it moving.
+            ETHConf 2027 runs at the Javits Center on Manhattan’s far west
+            side. The photos and floor map below show how the space was set up
+            in 2026.
           </p>
           <div className="mt-5 flex flex-wrap gap-2 text-white/70">
             {venueFacts.map((fact) => (
@@ -49,10 +49,10 @@ export function VenueSection() {
             <div className="media-scrim" />
             <figcaption className="absolute inset-x-0 bottom-0 p-6">
               <p className="text-xs font-bold uppercase tracking-[0.12em] text-lime">
-                Arrive
+                Check-in
               </p>
               <p className="mt-2 font-display text-3xl leading-tight">
-                Bright, open, unmistakably ETHConf.
+                Badge pickup in the main atrium.
               </p>
             </figcaption>
           </figure>
@@ -65,7 +65,7 @@ export function VenueSection() {
             />
             <div className="media-scrim" />
             <figcaption className="absolute inset-x-0 bottom-0 p-5 text-sm font-semibold">
-              Meet across the expo floor
+              The 2026 expo floor
             </figcaption>
           </figure>
 
@@ -77,7 +77,7 @@ export function VenueSection() {
             />
             <div className="media-scrim" />
             <figcaption className="absolute inset-x-0 bottom-0 p-5 text-sm font-semibold">
-              Easy wayfinding
+              Signage between halls
             </figcaption>
           </figure>
 
@@ -105,7 +105,7 @@ export function VenueSection() {
                   ETHConf 2026 venue map
                 </DialogTitle>
                 <DialogDescription className="text-white/60">
-                  A preview of how Halls C, D, and E were organized last year.
+                  How Halls C, D, and E were laid out in 2026.
                 </DialogDescription>
               </DialogHeader>
               <img

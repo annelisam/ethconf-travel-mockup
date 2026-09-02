@@ -33,8 +33,9 @@ type ModelContext = {
   ) => void | Promise<void>;
 };
 
-const DEFAULT_WALK = 25;
-const DEFAULT_PRICE = 400;
+/* Start with every partner stay visible; visitors narrow from there. */
+const DEFAULT_WALK = widestWalk;
+const DEFAULT_PRICE = widestPrice;
 
 /**
  * Owns the hotel browsing state and exposes it to the host model runtime as a

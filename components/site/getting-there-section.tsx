@@ -25,8 +25,8 @@ const routes = [
   },
   {
     kind: 'Airports',
-    title: 'Three ways in.',
-    body: 'JFK, LaGuardia, and Newark all connect to Midtown by rail, subway, or taxi.',
+    title: 'JFK, LGA, or EWR.',
+    body: 'AirTrain and the LIRR from JFK, the Q70 bus from LaGuardia, NJ Transit from Newark to Penn Station. Taxis run door to door from all three.',
     meta: 'Allow 45–75 min',
     icon: Plane,
     iconClass: 'bg-lime-mist text-[#4c7510]',
@@ -43,11 +43,13 @@ export function GettingThereSection() {
       <div className="shell">
         <SectionIntro
           eyebrow="Getting there"
-          title={<span id="getting-there-title">Land. Ride. Walk in.</span>}
+          title={
+            <span id="getting-there-title">429 11th Avenue, Hudson Yards.</span>
+          }
         >
           <p className="lede">
-            Javits Center sits on Manhattan’s far west side, one block from the 7
-            train and an easy walk from Penn Station.
+            One block from the 7 train, a 15-minute walk from Penn Station, and
+            45 to 75 minutes from any of the three airports.
           </p>
           <a
             className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-iris-deep hover:underline"
@@ -109,7 +111,7 @@ export function GettingThereSection() {
             className="inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-full bg-ink px-6 text-sm font-bold text-white transition hover:bg-ink-raised"
             href="mailto:hello@ethglobal.com"
           >
-            Contact our team <ArrowUpRight className="size-4" aria-hidden />
+            Request a letter <ArrowUpRight className="size-4" aria-hidden />
           </a>
         </div>
       </div>

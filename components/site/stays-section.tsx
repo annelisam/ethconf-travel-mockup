@@ -19,12 +19,12 @@ export function StaysSection() {
       >
         <div className="shell">
           <SectionIntro
-            eyebrow="Stay your way"
-            title={<span id="stays-title">Find your New York base.</span>}
+            eyebrow="Where to stay"
+            title={<span id="stays-title">Partner rates at 8 hotels.</span>}
           >
             <p className="lede">
-              Every option here is an ETHConf partner rate. Filter by the walk to
-              Javits and your nightly budget, then shortlist up to three to
+              Rates below are negotiated for ETHConf attendees. Filter by walk
+              time to Javits and nightly budget, then shortlist up to three to
               compare side by side.
             </p>
           </SectionIntro>
@@ -57,15 +57,17 @@ export function StaysSection() {
             </div>
           ) : (
             <div className="mt-8 rounded-3xl border border-dashed border-ink/20 bg-white p-12 text-center">
-              <p className="font-display text-3xl">No exact matches — yet.</p>
+              <p className="font-display text-3xl">
+                No stays match those filters.
+              </p>
               <p className="mt-2 text-ink-muted">
-                Try a wider walk or a higher nightly budget.
+                Widen the walk time or raise the nightly cap.
               </p>
               <Button
                 className="mt-5 h-11 rounded-full px-5"
                 onClick={filters.showEveryStay}
               >
-                Show every stay
+                Show all stays
               </Button>
             </div>
           )}

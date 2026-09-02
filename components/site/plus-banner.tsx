@@ -6,10 +6,10 @@ export function PlusBanner() {
       <div className="mx-auto flex w-full max-w-[var(--shell)] flex-col justify-between gap-8 lg:flex-row lg:items-center">
         <div>
           <p className="text-xs font-bold uppercase tracking-[0.14em] text-white/65">
-            Travel smarter with ETHGlobal Plus
+            ETHGlobal Plus
           </p>
           <h2 className="display-2 mt-3 max-w-4xl text-balance">
-            Airport lounges, eSIM data, and Uber credit — all sorted.
+            Airport lounges, eSIM data, and Uber credit.
           </h2>
         </div>
         <a
@@ -18,7 +18,7 @@ export function PlusBanner() {
           target="_blank"
           rel="noreferrer"
         >
-          Explore Plus <ArrowUpRight className="size-5" aria-hidden />
+          See what’s included <ArrowUpRight className="size-5" aria-hidden />
         </a>
       </div>
     </section>

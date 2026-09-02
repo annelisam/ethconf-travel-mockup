@@ -62,7 +62,7 @@ export function CompareBar({
                 Your shortlist
               </DialogTitle>
               <DialogDescription>
-                Compare what matters most: time to Javits and nightly price.
+                Walk time, transit time, and nightly rate, side by side.
               </DialogDescription>
             </DialogHeader>
             <div className="mt-4 grid gap-3 sm:grid-cols-3">
