@@ -16,7 +16,7 @@ export function VenueSection() {
   return (
     <section
       id="venue"
-      className="section-pad scroll-mt-28 overflow-hidden bg-ink text-white"
+      className="section-pad scroll-mt-28 overflow-hidden border-t border-white/10 bg-ink text-white"
       aria-labelledby="venue-title"
     >
       <div className="shell">

@@ -2,6 +2,9 @@ import { ArrowUpRight, Navigation, Plane, TrainFront } from 'lucide-react';
 
 import { SectionIntro } from '@/components/site/section-intro';
 
+const DIRECTIONS_URL =
+  'https://maps.google.com/?q=Javits+Center+429+11th+Ave+New+York';
+
 const routes = [
   {
     kind: 'Subway',
@@ -33,19 +36,28 @@ const routes = [
 export function GettingThereSection() {
   return (
     <section
-      id="essentials"
+      id="getting-there"
       className="section-pad scroll-mt-28 bg-white"
-      aria-labelledby="essentials-title"
+      aria-labelledby="getting-there-title"
     >
       <div className="shell">
         <SectionIntro
           eyebrow="Getting there"
-          title={<span id="essentials-title">Land. Ride. Walk in.</span>}
+          title={<span id="getting-there-title">Land. Ride. Walk in.</span>}
         >
           <p className="lede">
             Javits Center sits on Manhattan’s far west side, one block from the 7
             train and an easy walk from Penn Station.
           </p>
+          <a
+            className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-iris-deep hover:underline"
+            href={DIRECTIONS_URL}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Open directions in Google Maps{' '}
+            <ArrowUpRight className="size-4" aria-hidden />
+          </a>
         </SectionIntro>
 
         <div className="mt-12 grid overflow-hidden rounded-3xl border border-ink/12 md:grid-cols-3">

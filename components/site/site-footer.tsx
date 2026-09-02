@@ -1,4 +1,4 @@
-import { EVENT_DATES, VENUE, Wordmark } from '@/components/site/brand';
+import { EVENT_DATES, Logo, VENUE } from '@/components/site/brand';
 
 const links = [
   { label: 'Home', href: 'https://ethconf.com' },
@@ -10,7 +10,7 @@ export function SiteFooter() {
   return (
     <footer className="bg-ink-deep px-5 py-10 text-white sm:px-8 lg:px-12">
       <div className="mx-auto flex w-full max-w-[var(--shell)] flex-col justify-between gap-6 border-b border-white/10 pb-10 sm:flex-row sm:items-center">
-        <Wordmark markClassName="size-5 text-white" />
+        <Logo className="h-8" />
         <p className="text-sm text-white/55">
           {EVENT_DATES} · {VENUE}, NYC
         </p>

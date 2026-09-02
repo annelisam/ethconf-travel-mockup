@@ -1,12 +1,9 @@
 'use client';
 
-import { ArrowDown, ExternalLink } from 'lucide-react';
+import { ArrowDown } from 'lucide-react';
 
 import { EVENT_CITY, EVENT_DATES } from '@/components/site/brand';
 import { Button } from '@/components/ui/button';
-
-const DIRECTIONS_URL =
-  'https://maps.google.com/?q=Javits+Center+429+11th+Ave+New+York';
 
 export function HeroSection() {
   return (
@@ -18,7 +15,7 @@ export function HeroSection() {
       <div className="pointer-events-none absolute -left-24 top-36 size-80 rounded-full bg-iris/30 blur-[90px]" />
 
       <div className="mx-auto grid w-full max-w-[var(--shell)] lg:min-h-[660px] lg:grid-cols-[0.85fr_1.15fr]">
-        <div className="relative z-10 flex flex-col justify-center px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
+        <div className="relative z-10 flex flex-col justify-center px-5 pb-16 pt-28 sm:px-8 lg:px-12 lg:py-28">
           <p className="mb-7 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.16em] text-iris-light">
             <span className="h-px w-8 bg-iris-light" aria-hidden />
             {EVENT_DATES} · {EVENT_CITY}
@@ -46,11 +43,9 @@ export function HeroSection() {
             </Button>
             <a
               className="inline-flex h-12 items-center gap-2 rounded-full border border-white/25 px-6 text-sm font-semibold transition hover:bg-white/10"
-              href={DIRECTIONS_URL}
-              target="_blank"
-              rel="noreferrer"
+              href="#getting-there"
             >
-              Get directions <ExternalLink className="size-4" aria-hidden />
+              How to get there <ArrowDown className="size-4" aria-hidden />
             </a>
           </div>
         </div>

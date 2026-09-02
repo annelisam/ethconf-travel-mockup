@@ -12,9 +12,9 @@ export default function Home() {
       <SiteHeader />
       <main>
         <HeroSection />
-        <StaysSection />
         <VenueSection />
         <GettingThereSection />
+        <StaysSection />
         <PlusBanner />
       </main>
       <SiteFooter />
