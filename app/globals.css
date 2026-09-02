@@ -1,0 +1,439 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+/* ---------------------------------------------------------------------------
+   Design tokens
+   Brand palette lives in :root and is surfaced to Tailwind through @theme,
+   so markup uses semantic names (bg-ink, text-iris) instead of raw hex.
+--------------------------------------------------------------------------- */
+
+:root {
+  /* Brand palette */
+  --paper: #f5f4ef;
+  --paper-sunk: #efeee9;
+  --ink: #10162f;
+  --ink-deep: #0b1026;
+  --ink-raised: #272e50;
+  --ink-soft: #5b6074;
+  --ink-muted: #74798a;
+  --iris: #7065ff;
+  --iris-deep: #6559f3;
+  --iris-mist: #e8e5ff;
+  --iris-pale: #ebe9ff;
+  --iris-light: #b9b4ff;
+  --lime: #cdf875;
+  --lime-deep: #415e10;
+  --lime-mist: #effbd8;
+  --ember: #ff5a35;
+  --ember-light: #ff7a5d;
+  --ember-mist: #fff0eb;
+  --gold: #ffb000;
+
+  /* shadcn surface tokens */
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --card: #ffffff;
+  --card-foreground: var(--ink);
+  --popover: #ffffff;
+  --popover-foreground: var(--ink);
+  --primary: var(--ink);
+  --primary-foreground: #ffffff;
+  --secondary: var(--iris-pale);
+  --secondary-foreground: var(--ink);
+  --muted: var(--paper-sunk);
+  --muted-foreground: #686d7f;
+  --accent: var(--iris-mist);
+  --accent-foreground: var(--ink);
+  --destructive: #d9342b;
+  --border: rgb(16 22 47 / 13%);
+  --input: rgb(16 22 47 / 16%);
+  --ring: var(--iris);
+  --radius: 0.75rem;
+
+  /* Layout rhythm */
+  --shell: 1440px;
+  --shadow-card: 0 8px 30px rgb(16 22 47 / 4%);
+  --shadow-card-hover: 0 20px 48px rgb(16 22 47 / 11%);
+  --shadow-panel: 0 18px 50px rgb(16 22 47 / 7%);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+
+  /* Brand colors as Tailwind utilities */
+  --color-paper: var(--paper);
+  --color-paper-sunk: var(--paper-sunk);
+  --color-ink: var(--ink);
+  --color-ink-deep: var(--ink-deep);
+  --color-ink-raised: var(--ink-raised);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-muted: var(--ink-muted);
+  --color-iris: var(--iris);
+  --color-iris-deep: var(--iris-deep);
+  --color-iris-mist: var(--iris-mist);
+  --color-iris-light: var(--iris-light);
+  --color-lime: var(--lime);
+  --color-lime-deep: var(--lime-deep);
+  --color-lime-mist: var(--lime-mist);
+  --color-ember: var(--ember);
+  --color-ember-light: var(--ember-light);
+  --color-ember-mist: var(--ember-mist);
+  --color-gold: var(--gold);
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --font-display: var(--font-display-serif), Georgia, 'Times New Roman', serif;
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/* ---------------------------------------------------------------------------
+   Base
+--------------------------------------------------------------------------- */
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-synthesis-weight: none;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+a,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+select:focus-visible,
+[role='button']:focus-visible {
+  outline: 3px solid rgb(112 101 255 / 45%);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+img {
+  display: block;
+}
+
+/* ---------------------------------------------------------------------------
+   Layout primitives
+--------------------------------------------------------------------------- */
+
+.shell {
+  margin-inline: auto;
+  width: 100%;
+  max-width: var(--shell);
+  padding-inline: 1.25rem;
+}
+
+.section-pad {
+  padding-block: 4.5rem;
+}
+
+@media (min-width: 640px) {
+  .shell {
+    padding-inline: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .shell {
+    padding-inline: 3rem;
+  }
+
+  .section-pad {
+    padding-block: 7rem;
+  }
+}
+
+/* Display headline: one clamp scale reused across sections. */
+.display-1 {
+  font-family: var(--font-display);
+  font-size: clamp(3.4rem, 6.6vw, 7rem);
+  line-height: 0.86;
+  letter-spacing: -0.05em;
+}
+
+.display-2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.75rem, 5vw, 5.4rem);
+  line-height: 0.92;
+  letter-spacing: -0.045em;
+}
+
+.display-3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 2.6vw, 2.6rem);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+}
+
+.lede {
+  max-width: 34rem;
+  color: var(--ink-soft);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+
+@media (min-width: 1024px) {
+  .lede {
+    font-size: 1.125rem;
+  }
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--iris-deep);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  width: 2rem;
+  height: 1px;
+  background: currentColor;
+  content: '';
+}
+
+/* ---------------------------------------------------------------------------
+   Components
+--------------------------------------------------------------------------- */
+
+.nav-link {
+  position: relative;
+  padding-block: 0.35rem;
+  color: var(--ink-soft);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 160ms ease;
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  color: var(--ink);
+}
+
+.nav-link::after {
+  position: absolute;
+  inset-inline: 0;
+  bottom: -0.15rem;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--iris);
+  content: '';
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 220ms ease;
+}
+
+.nav-link[data-active='true'] {
+  color: var(--ink);
+}
+
+.nav-link[data-active='true']::after {
+  transform: scaleX(1);
+}
+
+.filter-group {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 0.25rem;
+  border: 1px solid rgb(16 22 47 / 12%);
+  border-radius: 999px;
+  background: var(--paper);
+  padding: 0.25rem;
+}
+
+.filter-label {
+  display: none;
+  align-items: center;
+  gap: 0.4rem;
+  padding-inline: 0.8rem 0.55rem;
+  color: var(--muted-foreground);
+  font-size: 0.75rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.filter-chip {
+  height: 34px;
+  border-radius: 999px;
+  padding-inline: 0.8rem;
+  color: #4f5569;
+  font-size: 0.78rem;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: background 160ms ease, color 160ms ease, box-shadow 160ms ease;
+}
+
+.filter-chip:hover {
+  color: var(--ink);
+}
+
+.filter-chip[aria-pressed='true'] {
+  background: var(--ink);
+  color: white;
+  box-shadow: 0 5px 16px rgb(16 22 47 / 18%);
+}
+
+.hotel-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgb(16 22 47 / 11%);
+  border-radius: 1.5rem;
+  background: white;
+  box-shadow: var(--shadow-card);
+  transition: transform 240ms ease, box-shadow 240ms ease;
+}
+
+.hotel-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.hotel-card[data-selected='true'] {
+  border-color: var(--iris);
+  box-shadow: 0 0 0 1px var(--iris), var(--shadow-card-hover);
+}
+
+.stat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border-radius: 999px;
+  background: var(--paper);
+  padding: 0.35rem 0.7rem;
+  color: var(--ink-soft);
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.compare-toggle {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-top: 1px solid rgb(16 22 47 / 10%);
+  padding-block: 0.9rem;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background 160ms ease, color 160ms ease;
+}
+
+.compare-toggle:hover:not(:disabled) {
+  background: var(--paper);
+}
+
+.compare-toggle[data-selected='true'] {
+  background: var(--iris-mist);
+  color: var(--iris-deep);
+}
+
+.compare-toggle:disabled {
+  color: var(--ink-muted);
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.pill-outline {
+  border-radius: 999px;
+  border: 1px solid rgb(255 255 255 / 15%);
+  padding: 0.5rem 0.85rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.media-figure {
+  position: relative;
+  overflow: hidden;
+}
+
+.media-figure img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 700ms ease;
+}
+
+.media-figure:hover img {
+  transform: scale(1.025);
+}
+
+.media-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgb(16 22 47 / 82%) 0%,
+    rgb(16 22 47 / 34%) 42%,
+    transparent 78%
+  );
+}
+
+@media (min-width: 640px) {
+  .filter-label {
+    display: flex;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
